@@ -1,38 +1,133 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin: 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  font-size: large;
+  background: papayawhip;
+  background: linear-gradient(papayawhip, #f5aa16);
+  position: relative;
+  min-height: 50vh;
+}
+
+.Container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: "row";
+}
+
+button {
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: tomato;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button:hover {
+  background-color: white;
+  color: tomato;
+}
+
+img {
+  width: 80%;
+  float: right;
+  filter: drop-shadow(10px 10px 4px #ccc);
+}
+
+form {
+  text-align: center;
+  display: relative;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: circle;
+}
+
+li > span:first-child {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+  margin-right: 10px;
+}
+
+a:hover {
+  color: dodgerblue;
+}
+
+.repo {
+  background-color: white;
+  padding: 10px;
+  margin: 10px 0;
+  list-style-type: none;
+  border-radius: 5px;
+}
+
+.alert-danger {
+  background-color: red;
+  padding: 20px;
+  margin: 20px;
+  color: white;
+  border-radius: 2px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.user-info {
+  flex: 0.8;
+}
+
+@media (max-width: 800px) {
+  .Container {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
   }
 }

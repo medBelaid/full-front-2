@@ -1,46 +1,18 @@
-# Getting Started with Create React App
+### `Doc`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- I used the functional components instead of React Classes in order to work with Hooks.
 
-## Available Scripts
+`App.tsx`
 
-In the project directory, you can run:
+- In App.tsx i defined two states 'userName' and 'tempUserName' by useState Hook.
+- The first one will be sent to the custom Hook 'useGithubUser' in each form submission.
+- The second one will be used to take the entered value of input. It will updated for each change in input value. And like that we avoid the call of the API in each change of the input value.
+- handleChange to update tempUserName state.
+- handleSubmit to submit userName state in useGithubUser Hook.
 
-### `npm start`
+`useGithubUser.tsx`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- useGithubUser contain a useEffect Hook which contains userName as dependency.
+- useGithubUser manage the user infos and return the final state contain user, error and loading attributes.
+- In useEffect we call the github API to get github user by userName. This call is encapsulated in a try catch
+- getUserRepos function has as param input named Repo_url what will be used to fetch the API and return all the user Repos.
